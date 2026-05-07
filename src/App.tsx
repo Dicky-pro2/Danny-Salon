@@ -8,7 +8,7 @@ import Gallery from './pages/Gallery'
 import Booking from './pages/Booking'
 import About from './pages/About'
 import Testimonials from './pages/Testimonials'
-//import Contact from './pages/Contact'
+import Contact from './pages/Contact'
 
 function ScrollToTop(): null {
   const { pathname } = useLocation()
@@ -29,7 +29,7 @@ export default function App() {
           <Route path="/book" element={<Booking />} />
           <Route path="/about" element={<About />} />
           <Route path="/testimonials" element={<Testimonials />} />
-          {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/contact" element={<Contact />} />
         </Routes>
          <Footer />
       </div>
