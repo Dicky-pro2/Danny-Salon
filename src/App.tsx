@@ -1,26 +1,41 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Home from './pages/Home'
-import Services from './pages/Services'
-import Gallery from './pages/Gallery'
-import Booking from './pages/Booking'
-import About from './pages/About'
-import Testimonials from './pages/Testimonials'
-import Contact from './pages/Contact'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { useEffect } from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import LocalBusinessSchema from "./components/LocalBusinessSchema";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import Gallery from "./pages/Gallery";
+import Booking from "./pages/Booking";
+import About from "./pages/About";
+import Testimonials from "./pages/Testimonials";
+import Contact from "./pages/Contact";
 
-function ScrollToTop(): null {
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
-  return null
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
 }
 
 export default function App() {
   return (
     <Router>
+      <LocalBusinessSchema />
       <ScrollToTop />
-      <div style={{ background: 'var(--bg)', minHeight: '100vh', color: 'var(--text)' }}>
+      <div
+        style={{
+          background: "var(--bg)",
+          minHeight: "100vh",
+          color: "var(--text)",
+        }}
+      >
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -31,8 +46,8 @@ export default function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-         <Footer />
+        <Footer />
       </div>
     </Router>
-  )
+  );
 }
